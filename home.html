@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Technology Stream - KEKUNAGOLLA NATIONAL SCHOOL</title>
+  <style>
+body {
+  font-family: 'Segoe UI', 'sans-serif';
+  margin: 0;
+  padding: 0;
+  background-image: url("plc.jpg");
+  background-size: cover;
+  color: #ffffff;
+  text-align: center;
+}
+
+header {
+  background: #001316b7;
+  backdrop-filter: blur(100px);
+  color: white;
+  padding: 10px;
+  border-radius: 2px;
+  text-align: center;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin: 0 15px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+section {
+  padding: 30px;
+  backdrop-filter: blur(10px);
+  background: rgba(0, 0, 0, 0.61);
+  margin: 20px;
+  border-radius: 10px;
+}
+
+footer {
+  text-align: center;
+  padding: 1px;
+  background: #252525;
+  color: white;
+}
+BUTTON{
+    COLOR:rgb(0, 1, 43);
+    background-color: rgba(243, 244, 255, 0.486);
+    padding:  10px;
+    border-radius: 15px;
+}
+img{
+    height: 200px;
+    width: 200px;
+}
+
+a{
+  color: #000000a8;
+}
+.nav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #000000f3;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.nav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: white;
+  display: block;
+}
+
+.nav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+}
+
+
+#fg{
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 1000;
+  padding: 10px 15px;
+  background-color: #1d1d1d;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+/* Login Button */
+.login-btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 12px 24px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+}
+
+/* Login Form Popup */
+.login-form {
+  position: fixed;
+  bottom: -300px;
+  right: 20px;
+  width: 280px;
+  background: white;
+  padding: 20px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.3);
+  border-radius: 10px;
+  transition: bottom 0.4s ease-in-out;
+  z-index: 1000;
+}
+
+.login-form.show {
+  bottom:  80px;
+}
+
+.login-form h2 {
+  margin-top: 0;
+}
+
+.login-form input {
+  width: 90%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.login-form button {
+  width: 100%;
+  padding: 10px;
+  background: #28a745;
+  color: white;
+  border: none;
+  border-radius: 6px;
+}
+
+.close-btn {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  cursor: pointer;
+  font-size: 20px;
+  color: red;
+}
+#pop{
+  color: #000000;
+}
+
+
+</style>
+
+</head>
+<body>
+  <header>
+<button onclick="openNav()" id="fg">☰ Open Menu</button>
+
+<div id="myNav" class="nav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+  <a href="#subjects">Subjects</a>
+  <a href="#contact">Contact</a>
+  <a href="gallary.html">Gallary</a>
+  <a href="Form.html">Form</a>
+  <a href="ach.html">achivement</a>
+</div>
+
+    
+    <img src="e.png">
+    <h1>KEKUNAGOLLA NATIONAL SCHOOL</h1>
+    <h2>Technology Stream</h2>
+    <p>Welcome to the future of innovation!</p>
+    
+    
+  </header>
+
+  <section id="about">
+    <h2>About the Technology Stream</h2>
+    <p>Technology Stream is one of the main subject streams in the Sri Lankan G.C.E. Advanced Level (A/L) education system. It was introduced to provide students with practical and theoretical knowledge in technological and engineering-related fields.
+      The Technology stream focuses on practical knowledge in ICT, Engineering, and Applied Sciences. It prepares students for tech-based careers and university education.</p>
+  </section>
+
+  <section id="subjects">
+    <h2>Subjects Offered</h2>
+   
+      # Engineering Technology/Biosystem Technology<br>
+      # Information & Communication Technology (ICT)/Agriculture<br>
+      # Science for Technology<br><br>
+    </ul>
+    <button onclick="showMessage()">Click to know more!</button>
+    <p id="msg"></p>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p>Email: 26techatkns@gmail.com</p>
+    <p>Phone: +94 760443501</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 KEKUNAGOLLA NATIONAL SCHOOL - Technology Stream</p>
+  </footer>
+<script>
+javascript
+function showMessage() {
+  document.getElementById("msg").innerText = "Main Subjects in Technology Stream:1. Engineering Technology (ET)  - Focuses on engineering principles, tools, machinery, and processes. - Includes hands-on skills like workshop practices and technical drawing.2. Bio Systems Technology (BST)  - Related to agriculture, environment, food production, and biotechnology.- Includes practicals like farming systems, eco management, and lab work.3. Science for Technology (SFT)  - A mix of physics, chemistry, biology, and maths basics.- Provides the scientific foundation for understanding tech applications.4. ICT (Optional/Additional)  - Covers computer systems, software, programming, and networks.Why Choose Technology Stream?- For students interested in engineering, tech, IT, agriculture, or environmental sciences.- Leads to university courses in engineering, architecture, ICT, biosystems, etc.- Provides practical skills for both higher education and technical careers.Technology stream opens doors to careers in IT, Engineering, Robotics and more!";}
+  function openNav() {
+  document.getElementById("myNav").style.width = "250px";
+}
+
+function closeNav() {
+  document.getElementById("myNav").style.width = "0";
+}
+
+</script>
+
+</body>
+</html>

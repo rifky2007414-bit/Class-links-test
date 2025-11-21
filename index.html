@@ -1,16 +1,129 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <link rel="shortcut icon" type="image/png" href="classpng.png">
-    <meta name="viewport" content="width=device-width ,initial-scale=1.0">
-    <link rel="icon" type="img/png" href="logo.png"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="https://unpkg.com/css-doodle@0.15.3/css-doodle.min.js"></script>
-    <title> Class links </title>
-  </head>
-  <body>
-   hello every body sgdgbr
-  </body>
-</html>
+<html>
+<head>
+  <title>Let's Go & Login</title>
+  <style>
+    body {
+      font-family: Arial;
+      text-align: center;
+      background: #f2f2f2;
+      background-image: url(plc.jpg);
+      background-size: cover;
+      border-radius: 10%;
+      padding: 10%;
+    }
 
+    #loginForm {
+      display: none;
+      background: white;
+      padding: 20px;
+      margin: auto;
+      width: 300px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      border-radius: 8px;
+    }
+
+    input {
+      margin: 10px 0;
+      padding: 8px;
+      width: 90%;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #007BFF;
+      color: white;
+      border:rgb(153, 153, 153) solid 1px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+    #rfy {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      padding: 10px 20px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    header{
+        color: white;
+        padding: 10px;
+        background-color: #030016ce ;
+        border:#9fc1ee solid 5px;
+        border-radius: 15px;
+    }
+    header img{
+        width: 150px;
+        height: 150px;
+    }
+    #rfy{
+        border: rgb(10, 0, 66) solid 2px;
+    }
+    #rfy:hover{
+        background-color: #0056b3;
+    }
+     body {
+      transition: opacity 0.5s ease;
+      opacity: 1;
+    }
+    body.fade-out {
+      opacity: 0;
+    }
+
+
+  </style>
+</head>
+<body>
+<header>
+  <img src="e.png" >
+  <h2>WELCOME TO KEKUNAGOLLA NATIONAL SCHOOL ENGINEERING TECHNOLOGY STREAM PAGE</h2>
+  <button onclick="goNextPage()">Let's GO🚀</button>
+  </header>
+  <button onclick="toggleLogin()" id="rfy"> ADMIN ONLY </button>
+  
+
+  <div id="loginForm">
+  <h2>Login</h2>
+  <input type="text" id="username" placeholder="Username" />
+  <input type="password" id="password" placeholder="Password" />
+  <button onclick="login()">Login</button>
+  </div>
+
+  <script>
+    function toggleLogin() {
+      const form = document.getElementById("loginForm");
+      form.style.display = form.style.display === "none" ? "block" : "none";
+    }
+
+     function login() {
+      var user = document.getElementById("username").value;
+      var pass = document.getElementById("password").value;
+
+      if (user === "admin" && pass === "admin123") {
+        window.location.href = "admin.html";
+      } else {
+        window.location.href = "index.html";
+      }
+    }
+    function goNextPage() {
+      window.location.href = "index.html";
+    }
+
+     function goNextPage(url) {
+      document.body.classList.add('fade-out');
+      setTimeout(() => {
+        window.location.href = "index.html";
+      }, 500); // Wait for fade out animation (0.5s) before changing page
+    }
+
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+body {
+  font-family: Arial, sans-serif;
+  background-image: url(plc.jpg);
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.form-container {
+  background: #ffffff9f;
+  backdrop-filter: blur (20px);
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 400px;
+}
+
+h2 {
+  text-align: center;
+  color: #004080;
+}
+
+label {
+  display: block;
+  margin-top: 15px;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+button {
+  margin-top: 20px;
+  width: 100%;
+  background-color: #004080;
+  color: #ffffff;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0059b3;
+}
+
+#statusMsg {
+  margin-top: 15px;
+  text-align: center;
+  color: green;
+}</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Technology Stream - Contact Form</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <div class="form-container">
+    <h2>Contact Us - Technology Stream</h2>
+    <form id="techForm" onsubmit="return validateForm()">
+      <label for="name">Name:</label>
+      <input type="text" id="name" required/>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" required/>
+
+      <label for="message">Message:</label>
+      <textarea id="message" rows="4" required></textarea>
+
+      <button type="submit">Submit</button>
+    </form>
+    <p id="statusMsg"></p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+<script>function validateForm() {
+  const name = document.getElementById("name").value.trim();
+  const email = document.getElementById("email").value.trim();
+  const message = document.getElementById("message").value.trim();
+  const statusMsg = document.getElementById("statusMsg");
+
+  if (!name || !email || !message) {
+    statusMsg.style.color = "red";
+    statusMsg.textContent = "Please fill out all fields.";
+    return false;
+  }
+
+  statusMsg.style.color = "green";
+  statusMsg.textContent = "Form submitted successfully!";
+  return false; // Set to false to prevent actual form submission
+}</script>
+</html>

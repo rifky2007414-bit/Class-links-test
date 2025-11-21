@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style> 
+    body {
+      font-family: Arial, sans-serif;
+      margin: 30px;
+      background-color: #f4f4f4;
+    }
+    h2 {
+      color: #333;
+    }
+    label {
+      display: block;
+      margin-top: 15px;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+    }
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #008cba;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #005f6b;
+    }
+    .preview {
+      margin-top: 20px;
+    }
+    </style>
+  <title>Admin Upload</title>
+</head>
+<body>
+    <h1>Admin Dashboard</h1>
+    <h2>Welcome Admin!</h2>
+  <p>இது நிர்வாகிகளுக்கான தனிப்பட்ட பக்கம்.</p>
+
+  <label>Address:</label>
+  <textarea id="address" placeholder="Enter your address..."></textarea>
+
+  <label>Upload Image:</label>
+  <input type="file" id="imageInput" accept="image/*">
+
+  <label>Upload Video:</label>
+  <input type="file" id="videoInput" accept="video/*">
+
+  <label>Upload Audio:</label>
+  <input type="file" id="audioInput" accept="audio/*">
+
+  <button onclick="saveData()">Save</button>
+
+  <div class="preview">
+    <h3>Preview:</h3>
+    <p id="savedAddress"></p>
+    <img id="previewImage" width="200" style="display:none;" />
+    <video id="previewVideo" width="320" controls style="display:none;"></video>
+    <audio id="previewAudio" controls style="display:none;"></audio>
+  </div>
+
+  <h2>Upload Content</h2>
+  <textarea id="content" placeholder="Type something..."></textarea><br>
+  <button onclick="upload()">Upload</button>
+
+  <script>
+    function upload() {
+      var data = document.getElementById("content").value;
+      localStorage.setItem("sharedData", data);
+      alert("Uploaded successfully!");
+    }
+
+    function saveData() {
+      const address = document.getElementById('address').value;
+      document.getElementById('savedAddress').innerText = "Address: " + address;
+
+      const imageFile = document.getElementById('imageInput').files[0];
+      if (imageFile) {
+        const imgURL = URL.createObjectURL(imageFile);
+        const img = document.getElementById('previewImage');
+        img.src = imgURL;
+        img.style.display = "block";
+      }
+
+      const videoFile = document.getElementById('videoInput').files[0];
+      if (videoFile) {
+        const videoURL = URL.createObjectURL(videoFile);
+        const video = document.getElementById('previewVideo');
+        video.src = videoURL;
+        video.style.display = "block";
+      }
+
+      const audioFile = document.getElementById('audioInput').files[0];
+      if (audioFile) {
+        const audioURL = URL.createObjectURL(audioFile);
+        const audio = document.getElementById('previewAudio');
+        audio.src = audioURL;
+        audio.style.display = "block";
+      }
+
+      alert("Data previewed. (Not saved to server)");
+    }
+  </script>
+</body>
+</html>
