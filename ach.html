@@ -65,6 +65,15 @@ footer{
   background-color: #b7d9dfb7;
 
 }
+body {
+  display: flex;
+flex-direction: column; /* phone */
+}
+@media (min-width: 768px) {
+
+  body{flex-direction: row; } /* desktop */
+}
+
 </style>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
