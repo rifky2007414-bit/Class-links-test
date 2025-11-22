@@ -61,7 +61,16 @@ button:hover {
   margin-top: 15px;
   text-align: center;
   color: green;
-}</style>
+}
+body {
+  display: flex;
+flex-direction: column; /* phone */
+}
+@media (min-width: 768px) {
+
+  body{flex-direction: row; } /* desktop */
+}
+</style>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Technology Stream - Contact Form</title>
