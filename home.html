@@ -104,6 +104,7 @@ a{
   color: white;
   border: white solid 2px;
   cursor: pointer;
+  font-size: 30px;
 }
 /* Login Button */
 .login-btn {
@@ -184,7 +185,11 @@ a{
 </head>
 <body>
   <header>
-<button onclick="toggleNav()" id="fg">☰ </button>
+<div id="mySidebar" style="width: 0; height: 100%; background: #111; position: fixed; top: 0; left: 0; overflow-x: hidden; transition: 0.5s;">
+  <a href="javascript:void(0)" onclick="closeNav()" style="color: white; padding: 10px; display: block;">Close ×</a>
+  <!-- Add menu items here -->
+
+
 
 <div id="myNav" class="nav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
@@ -243,27 +248,17 @@ function showMessage() {
   
 
 
-function toggleNav() {
-  if (isNavOpen) {
-    closeNav();
-  } else {
-    openNav();
-  }
-  isNavOpen = !isNavOpen;
-}
+
+
+
 
 function openNav() {
-  // Code to open nav
-  console.log("Nav opened");
+  document.getElementById("mySidebar").style.width = "250px";
 }
 
 function closeNav() {
-  // Code to close nav
-  console.log("Nav closed");
+  document.getElementById("mySidebar").style.width = "0";
 }
-
-
-
 
 
   
