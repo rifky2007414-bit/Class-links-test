@@ -184,8 +184,7 @@ a{
 </head>
 <body>
   <header>
-<button onclick="openNav()" id="fg">☰ </button>
-<button onclick="closeNav()" id="fg">☰ </button>
+<button onclick="toggleNav()" id="fg">☰ </button>
 
 <div id="myNav" class="nav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
@@ -241,13 +240,28 @@ a{
 javascript
 function showMessage() {
   document.getElementById("msg").innerText = "Main Subjects in Technology Stream:1. Engineering Technology (ET)  - Focuses on engineering principles, tools, machinery, and processes. - Includes hands-on skills like workshop practices and technical drawing.2. Bio Systems Technology (BST)  - Related to agriculture, environment, food production, and biotechnology.- Includes practicals like farming systems, eco management, and lab work.3. Science for Technology (SFT)  - A mix of physics, chemistry, biology, and maths basics.- Provides the scientific foundation for understanding tech applications.4. ICT (Optional/Additional)  - Covers computer systems, software, programming, and networks.Why Choose Technology Stream?- For students interested in engineering, tech, IT, agriculture, or environmental sciences.- Leads to university courses in engineering, architecture, ICT, biosystems, etc.- Provides practical skills for both higher education and technical careers.Technology stream opens doors to careers in IT, Engineering, Robotics and more!";}
-  function openNav() {
-  document.getElementById("myNav").style.width = "250px";
+  
+let isNavOpen = false;
+
+function toggleNav() {
+  if (isNavOpen) {
+    closeNav();
+  } else {
+    openNav();
+  }
+  isNavOpen = !isNavOpen;
+}
+
+function openNav() {
+  // Code to open nav
+  console.log("Nav opened");
 }
 
 function closeNav() {
-  document.getElementById("myNav").style.width = "0";
+  // Code to close nav
+  console.log("Nav closed");
 }
+
 
 
 
