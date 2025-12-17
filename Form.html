@@ -95,29 +95,7 @@ button:hover {
 <button onclick="uploadFile()">Upload</button>
   <script src="script.js"></script>
 
-<script type="module">
-  // Import the functions you need from the SDKs you need
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-app.js";
-  import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-analytics.js";
-  // TODO: Add SDKs for Firebase products that you want to use
-  // https://firebase.google.com/docs/web/setup#available-libraries
 
-  // Your web app's Firebase configuration
-  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-  const firebaseConfig = {
-    apiKey: "AIzaSyDluYNJ5GjA5Zis1ir0ANoaicrB_ubHHY0",
-    authDomain: "my-web-14807.firebaseapp.com",
-    projectId: "my-web-14807",
-    storageBucket: "my-web-14807.firebasestorage.app",
-    messagingSenderId: "182873730444",
-    appId: "1:182873730444:web:921c5938fa3e854580faa9",
-    measurementId: "G-JQ7FNRJBJX"
-  };
-
-  // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
-  const analytics = getAnalytics(app);
-</script>
 <script>
   function uploadFile() {
     const file = document.getElementById("fileInput").files[0];
@@ -140,6 +118,23 @@ button:hover {
       }
     );
   }
+</script>
+<script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-storage.js"></script>
+
+<script>
+  const firebaseConfig = {
+    apiKey: "AIzaSyDluYNJ5GjA5Zis1ir0ANoaicrB_ubHHY0",
+    authDomain: "my-web-14807.firebaseapp.com",
+    projectId: "my-web-14807",
+    storageBucket: "my-web-14807.firebasestorage.app",
+    messagingSenderId: "182873730444",
+    appId: "1:182873730444:web:921c5938fa3e854580faa9"
+  };
+
+  // Firebase தொடக்கவும்
+  const app = firebase.initializeApp(firebaseConfig);
+  const storage = firebase.storage();
 </script>
 
 
