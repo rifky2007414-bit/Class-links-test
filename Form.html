@@ -140,23 +140,7 @@ button:hover {
   }
 </script>
 
-<p>function validateForm() {
-  const name = document.getElementById("name").value.trim();
-  const email = document.getElementById("email").value.trim();
-  const message = document.getElementById("message").value.trim();
-  const statusMsg = document.getElementById("statusMsg");
 
-  if (!name || !email || !message) {
-    statusMsg.style.color = "red";
-    statusMsg.textContent = "Please fill out all fields.";
-    return false;
-  }
-
-  statusMsg.style.color = "green";
-  statusMsg.textContent = "Form submitted successfully!";
-  return false; // Set to false to prevent actual form submission
-}
-</p>
 </html>
 
 
