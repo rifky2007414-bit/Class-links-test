@@ -81,7 +81,7 @@ button:hover {
       <label for="email">Email:</label>
       <input type="email" id="email" required/>
 
-      <label for="message">Message:</label>
+      <label for="message" id="cpp">Message:</label>
       <textarea id="message" rows="4" required></textarea>
 
       <button type="submit">Submit</button>
@@ -90,56 +90,4 @@ button:hover {
   </div>
 
 </body>
-
-<input type="file" id="fileInput" />
-<button onclick="uploadFile()">Upload</button>
-  <script src="script.js"></script>
-
-
-<script>
-  function uploadFile() {
-    const file = document.getElementById("fileInput").files[0];
-    const storageRef = firebase.storage().ref("uploads/" + file.name);
-    const uploadTask = storageRef.put(file);
-
-    uploadTask.on("state_changed", 
-      function(snapshot) {
-        // Progress
-        const percent = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-        console.log("Upload is " + percent + "% done");
-      }, 
-      function(error) {
-        alert("Upload failed: " + error.message);
-      }, 
-      function() {
-        uploadTask.snapshot.ref.getDownloadURL().then(function(downloadURL) {
-          alert("File available at: " + downloadURL);
-        });
-      }
-    );
-  }
-</script>
-<script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-storage.js"></script>
-
-<script>
-  const firebaseConfig = {
-    apiKey: "AIzaSyDluYNJ5GjA5Zis1ir0ANoaicrB_ubHHY0",
-    authDomain: "my-web-14807.firebaseapp.com",
-    projectId: "my-web-14807",
-    storageBucket: "my-web-14807.firebasestorage.app",
-    messagingSenderId: "182873730444",
-    appId: "1:182873730444:web:921c5938fa3e854580faa9"
-  };
-
-  // Firebase தொடக்கவும்
-  const app = firebase.initializeApp(firebaseConfig);
-  const storage = firebase.storage();
-</script>
-
-
 </html>
-
-
-
-  
