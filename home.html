@@ -171,13 +171,26 @@ a{
 #pop{
   color: #000000;
 }
-#kl{
-  color: #ffffff;
-  padding: 2px;
-  border: #ccc solid 1.5px;
+
+
+ .navbar {
+  background-color: #333;
+  overflow: hidden;
+  text-align: center;
 }
 
- 
+.navbar a {
+  display: inline-block;
+  color: white;
+  padding: 14px 20px;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.navbar a:hover {
+  background-color: #575757;
+}
+
 
 
 
@@ -189,28 +202,17 @@ a{
 </head>
 <body>
   <header>
-<button onclick="openNav()" style="font-size: 30px;">☰</button>
-
-<div id="mySidebar" style="width: 0; height: 100%; background: #111; position: fixed; top: 0; left: 0; overflow-x: hidden; transition: 0.5s;">
-  <a href="javascript:void(0)" onclick="closeNav()" style="color: white; padding: 10px; display: block;">Close ×</a>
-  <!-- Add menu items here -->
-  <div id="kl">
+<nav class="navbar">
   <a href="#subjects">Subjects</a>
-  </div>
-  <div id="kl">
   <a href="#contact">Contact</a>
-  </div>
-  <div id="kl">
   <a href="gallary.html">Gallary</a>
-  </div>
-  <div id="kl">
   <a href="Form.html">Form</a>
-  </div>
-  <div id="kl">
   <a href="ach.html">achivement</a>
-  <div id="kl">
-  </div>
-</div>
+  </nav>
+
+  
+ 
+
     
     <img src="pic/e.png">
     <h1>KEKUNAGOLLA NATIONAL SCHOOL</h1>
@@ -263,13 +265,7 @@ function showMessage() {
 
 
 
-function openNav() {
-  document.getElementById("mySidebar").style.width = "250px";
-}
 
-function closeNav() {
-  document.getElementById("mySidebar").style.width = "0";
-}
 
 
   
