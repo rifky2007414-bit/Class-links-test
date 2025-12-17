@@ -88,11 +88,63 @@ button:hover {
     </form>
     <p id="statusMsg"></p>
   </div>
-
+<input type="file" id="fileInput" />
+<button onclick="uploadFile()">Upload</button>
   <script src="script.js"></script>
 </body>
 
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyDluYNJ5GjA5Zis1ir0ANoaicrB_ubHHY0",
+    authDomain: "my-web-14807.firebaseapp.com",
+    projectId: "my-web-14807",
+    storageBucket: "my-web-14807.firebasestorage.app",
+    messagingSenderId: "182873730444",
+    appId: "1:182873730444:web:921c5938fa3e854580faa9",
+    measurementId: "G-JQ7FNRJBJX"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+</script>
 <script>
+  function uploadFile() {
+    const file = document.getElementById("fileInput").files[0];
+    const storageRef = firebase.storage().ref("uploads/" + file.name);
+    const uploadTask = storageRef.put(file);
+
+    uploadTask.on("state_changed", 
+      function(snapshot) {
+        // Progress
+        const percent = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+        console.log("Upload is " + percent + "% done");
+      }, 
+      function(error) {
+        alert("Upload failed: " + error.message);
+      }, 
+      function() {
+        uploadTask.snapshot.ref.getDownloadURL().then(function(downloadURL) {
+          alert("File available at: " + downloadURL);
+        });
+      }
+    );
+  }
+</script>
+
+
+</html>
+
+
+
   function validateForm() {
   const name = document.getElementById("name").value.trim();
   const email = document.getElementById("email").value.trim();
@@ -109,6 +161,3 @@ button:hover {
   statusMsg.textContent = "Form submitted successfully!";
   return false; // Set to false to prevent actual form submission
 }
-  </script>
-
-</html>
