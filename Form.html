@@ -74,26 +74,20 @@ button:hover {
 <body>
   <div class="form-container">
     <h2>Contact Us - Technology Stream</h2>
-    <form id="techForm" onsubmit="return validateForm()">
+    <form id="techForm" >
       <label for="name">Name:</label>
-      <input type="text" id="name" required/>
+      <input id="name" placeholder="Name">
 
       <label for="email">Email:</label>
-      <input type="email" id="email" required/>
+      <input id="email" placeholder="Email">
 
-      <label for="message" id="cpp">Message:</label>
-      <textarea id="message" rows="4" required></textarea>
+      
 
-      <button type="submit">Submit</button>
-
+      
 
 
 
-      <input id="name" placeholder="Name">
-<input id="email" placeholder="Email">
-<input id="massage" placeholder="Massage">
-
-<button onclick="sendData()">Send</button>
+<button onclick="sendData()">Submit</button>
 
 <script>
 function sendData() {
@@ -102,7 +96,7 @@ function sendData() {
     body: JSON.stringify({
       name: document.getElementById("name").value,
       email: document.getElementById("email").value,
-      massage: document.getElementById("massage").value
+      
 
     })
   })
