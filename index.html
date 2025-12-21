@@ -42,17 +42,7 @@
     button:hover {
       background-color: #0056b3;
     }
-    #rfy {
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      padding: 10px 20px;
-      background-color: #007BFF;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
+   
     header{
         color: white;
         padding: 10px;
@@ -64,12 +54,7 @@
         width: 150px;
         height: 150px;
     }
-    #rfy{
-        border: rgb(10, 0, 66) solid 2px;
-    }
-    #rfy:hover{
-        background-color: #0056b3;
-    }
+   
      body {
       transition: opacity 0.5s ease;
       opacity: 1;
@@ -98,7 +83,7 @@
   <h2>WELCOME TO KEKUNAGOLLA NATIONAL SCHOOL ENGINEERING TECHNOLOGY STREAM SITE</h2>
   <button onclick="goNextPage()">Let's GO🚀</button>
   </header>
-  <button onclick="toggleLogin()" id="rfy"> ADMIN ONLY </button>
+  
   
  <link id="logo" rel="icon" href="pic/favicon.png">
   <div id="loginForm">
@@ -114,16 +99,7 @@
       form.style.display = form.style.display === "none" ? "block" : "none";
     }
 
-     function login() {
-      var user = document.getElementById("username").value;
-      var pass = document.getElementById("password").value;
-
-      if (user === "admin" && pass === "admin123") {
-        window.location.href = "admin.html";
-      } else {
-        window.location.href = "home.html";
-      }
-    }
+    
     function goNextPage() {
       window.location.href = "home.html";
     }
