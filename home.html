@@ -221,13 +221,22 @@ a{
 
 
 
-
-
+body {
+  animation: fadeOut 2s forwards;
+}
+@keyframes fadeOut {
+  from{
+    opacity: 1;
+  }
+  to{
+    opacity: 0;
+  }
+}
 
 
 </style>
+
  <meta charset="UTF-8" />
-  
 </head>
 <body>
   <header>
@@ -240,7 +249,7 @@ a{
   <a href="ach.html">Achivement</a>
 </div>
 
-<span class="openbtn" onclick="openNav()">☰ Menu</span>
+<span class="openbtn" onclick="openNav()">☰ </span>
 
 
   
